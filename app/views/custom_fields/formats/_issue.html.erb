@@ -1,0 +1,7 @@
+<p>
+  <label><%= l(:label_query) %></label>
+  <label class="block">
+    <%= select_tag 'custom_field[query]', options_from_collection_for_select(IssueQuery.visible, :id, :name, (custom_field.query.is_a?(Array) ? custom_field.query.shift.to_i : custom_field.query.to_i)) %>
+  </label>
+</p>
+<p><%= edit_tag_style_tag f %></p>
